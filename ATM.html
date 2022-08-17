@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ATM | JS</title>
+  <style>
+
+    body {
+      background-color: #666;
+      font-family: Arial;
+      
+    }
+
+    p {
+      text-decoration: underline;
+      margin-left: 0;
+    }
+
+
+    button { 
+      width: 160px;
+      padding: 5px;
+      margin-top: 5px;
+
+      border: 1px solid grey;
+      border-radius: 5px;
+      background-color: rgb(225, 211, 211);
+    
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JS ATM & Co.</h1>
+  <h2>Welcome</h2>
+  <p>Choose action</p>
+  <button onclick="
+      //
+      let input_id = +prompt('Enter ID')
+      if(input_id === client_id) {
+        let input_pin = +prompt('Enter PIN')
+        if(input_pin === client_pin_code) {
+          alert(`balance: ${client_money_amount} ${client_money_currency}`)
+        } else {
+          alert('Wrong Pin Code')
+        }
+      } else {
+        alert('Wrong client ID')
+      }
+      
+  
+  ">CHECK FOUNDS
+  </button>
+  <br>
+
+  <button onclick="
+    let input_amount = +prompt('Enter AMOUNT')
+    let input_currency = prompt('Enter Currency')
+    if ( input_currency ===client_money_currency) {
+      let input_id = +prompt('Enter ID')
+      if(input_id === client_id) {
+        let input_pin = +prompt('Enter PIN')
+        if(input_pin === client_pin_code) {
+          alert(`The transfer has been succeed! \n Balance: ${client_money_amount + input_amount} ${client_money_currency}`)
+        } else {
+          alert('Wrong Pin Code')
+        }
+      } else {
+        alert('Wrong client ID')
+      }
+    } else {
+      alert(`Cannot process ${input_currency}`)
+    }
+  ">
+    TRANFER FOUNDS
+  </button>
+  <br>
+  
+  <button onclick="
+    let output_amount = +prompt('Enter AMOUNT')
+    if ( output_amount <= 5000 ) {
+      let input_currency = prompt('Enter Currency')
+    if ( input_currency ===client_money_currency) {
+      let input_id = +prompt('Enter ID')
+      if(input_id === client_id) {
+        let input_pin = +prompt('Enter PIN')
+        if(input_pin === client_pin_code) {
+          alert(`The witdrawal has been succeed! \n Balance: ${client_money_amount - output_amount} ${client_money_currency}`)
+        } else {
+          alert('Wrong Pin Code')
+        }
+      } else {
+        alert('Wrong client ID')
+      }
+    } else {
+      alert(`Cannot process ${input_currency}`)
+    }
+    } else { 
+      alert('You have exceed the witdrawal amount!  \n  Limit: 5000')
+    }    
+  ">
+    WITHDRAW FOUNDS
+  </button>
+  <script>
+    // client account data 
+    let client_money_amount   = 10000
+    let client_money_currency = "EUR"
+    let client_id             = 12345678
+    let client_pin_code       = 1234
+  </script>
+</body>
+</html>
