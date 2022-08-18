@@ -77,6 +77,8 @@
   
   <button onclick="
     let output_amount = +prompt('Enter AMOUNT')
+    if (output_amount <= client_money_amount) {
+      let input_currency = prompt('Enter Currency')
     if ( output_amount <= 5000 ) {
       let input_currency = prompt('Enter Currency')
     if ( input_currency ===client_money_currency) {
@@ -96,7 +98,12 @@
     }
     } else { 
       alert('You have exceed the witdrawal amount!  \n  Limit: 5000')
-    }    
+    } 
+    } else {
+      alert('You have not sufficient money on your account!')
+    }
+      
+       
   ">
     WITHDRAW FOUNDS
   </button>
